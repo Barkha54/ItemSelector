@@ -1,0 +1,26 @@
+<html ng-app="myApp">
+	<head>
+		<h1>Welcome to AngularJS</h1>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+	<body>
+		
+		<div ng-controller="myCtrl">
+			<span class='searchCategory'>Search an item from the list <input type="text" ng-model="searchItems"></span>
+			<div class='firstItems'>
+				<h3>Add List of items from here</h3>
+					<p ng-repeat="first in firstList| filter: searchItems" ng-click="removeItem($event)" class='item' value=first>
+						{{first}}
+					</p>
+			</div>
+			<div class='secondItems'>
+				<h3>Selected Items</h3>
+					<p ng-repeat="second in secondList" class='item'>
+						{{second}}
+					</p>
+			</div>
+		</div>
+	</body>
+</html>
